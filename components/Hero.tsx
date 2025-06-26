@@ -39,16 +39,16 @@ export default function Hero() {
             <Badge className="mb-4 bg-green-100 text-green-800 hover:bg-green-200">
               ✨ Senior Consultant & Head - Fetal Medicine
             </Badge>
-            <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6 leading-tight">
+            <h1 className="text-4xl md:text-6xl font-extrabold text-gray-900 mb-6 leading-tight">
               Dr. Reema Bhatt
-              <span className="text-primary block text-3xl md:text-4xl mt-2">
+              <span className="text-primary block text-3xl md:text-4xl mt-2 font-extrabold">
                 Fetal Medicine Specialist
               </span>
             </h1>
-            <p className="text-xl text-gray-600 mb-4 leading-relaxed">
+            <p className="text-xl font-bold text-gray-950 mb-4 leading-relaxed">
               MS, DNB, FICOG, MNAMS, Fetal Medicine (AIIMS Delhi)
             </p>
-            <p className="text-lg text-gray-600 mb-8 leading-relaxed">
+            <p className="text-lg text-gray-800 mb-8 leading-relaxed font-semibold">
               Specialized in invasive fetal procedures at Amrita Hospital,
               Faridabad. Passionately dedicated to providing optimal outcomes
               for every pregnancy and fetus.

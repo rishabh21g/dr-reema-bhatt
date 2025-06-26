@@ -62,7 +62,7 @@ export default function Contact() {
   ];
 
   return (
-    <section id="contact" className="py-20">
+    <section id="contact" >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-16">
@@ -76,16 +76,16 @@ export default function Contact() {
         </div>
 
         {/* Contact Info Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-3 mb-6">
           {contactInfo.map((info, index) => (
             <Card
               key={index}
               className="border-green-100 hover:shadow-md transition-all h-full"
             >
               <CardContent className="p-6">
-                <div className="flex items-start space-x-4">
-                  <div className={`p-3 rounded-full bg-gray-50 ${info.color}`}>
-                    <info.icon className="h-6 w-6" />
+                <div className="flex  flex-col">
+                  <div className={`p-3 rounded-full ${info.color}`}>
+                    <info.icon className="size-6" />
                   </div>
                   <div>
                     <h3 className="font-semibold text-gray-900 mb-2">{info.title}</h3>

@@ -1,28 +1,33 @@
-import { Card, CardContent } from '@/components/ui/card';
+'use client';
+
 import { Badge } from '@/components/ui/badge';
-import { GraduationCap, Heart, Shield, Target, Award, Languages } from 'lucide-react';
+import { GraduationCap, Heart, Shield, Award, Languages } from 'lucide-react';
 
 export default function About() {
   const achievements = [
-    { 
-      icon: GraduationCap, 
-      title: 'Education', 
-      description: 'MBBS, MS, DNB, FICOG, MNAMS, Fetal Medicine (AIIMS Delhi), FMF-UK Accredited' 
+    {
+      icon: GraduationCap,
+      label: 'Education',
+      value:
+        'MBBS, MS, DNB, FICOG, MNAMS, Fetal Medicine (AIIMS Delhi), FMF-UK Accredited',
     },
-    { 
-      icon: Heart, 
-      title: 'Specialization', 
-      description: 'Fetal Medicine & Perinatology, Invasive Fetal Therapy, Genetic Counselling' 
+    {
+      icon: Heart,
+      label: 'Specialization',
+      value:
+        'Fetal Medicine & Perinatology, Invasive Fetal Therapy, Genetic Counselling',
     },
-    { 
-      icon: Shield, 
-      title: 'Experience', 
-      description: '23 Years in Armed Forces, Senior Consultant & Head at Amrita Hospital' 
+    {
+      icon: Shield,
+      label: 'Experience',
+      value:
+        '23 Years in Armed Forces | Senior Consultant & Head at Amrita Hospital, Faridabad',
     },
-    { 
-      icon: Award, 
-      title: 'Recognition', 
-      description: 'Presidential Certificate of Appreciation, Chief of Army Staff Commendation' 
+    {
+      icon: Award,
+      label: 'Recognition',
+      value:
+        'Presidential Certificate of Appreciation, Chief of Army Staff Commendation, Multiple Medals',
     },
   ];
 
@@ -30,96 +35,68 @@ export default function About() {
     'Certificate of Appreciation by President of India (2022)',
     'Chief of Army Staff Commendation (2016)',
     'Army Commanders Commendation Card (2012)',
-    'Mr. S. Bhattacharya & Dr. Ganguli\'s Gold Medal (2020)',
-    'Dr. Neera Aggarwal Medal Best Paper, Silver Medal (2013)'
+    "Mr. S. Bhattacharya & Dr. Ganguli's Gold Medal (2020)",
+    'Dr. Neera Aggarwal Medal Best Paper, Silver Medal (2013)',
   ];
 
   return (
-    <section id="about" className="py-20 bg-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <Badge className="mb-4 bg-green-100 text-green-800">About Dr. Reema Bhatt</Badge>
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+    <section id="about" className="py-8">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Heading */}
+        <div className="text-center mb-10">
+          <Badge className="mb-2 bg-green-100 text-green-800 ">About Dr. Reema Bhatt</Badge>
+          <h2 className="text-2xl md:text-4xl font-bold text-gray-900">
             Dedicated to <span className="text-primary">Fetal Medicine</span>
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Dr. Reema Bhatt is a Senior Consultant & Head of Fetal Medicine at Amrita Hospital, Faridabad, 
-            with special expertise in invasive fetal procedures and 23 years of distinguished service in the Armed Forces.
+          <p className="  mt-3 max-w-4xl mx-auto text-2xl font-bold text-gray-800">
+            Senior Consultant & Head of Fetal Medicine at Amrita Hospital, Faridabad with 23 years of
+            Armed Forces service and expertise in invasive fetal procedures.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          <div className="space-y-6">
-            <div className="prose prose-lg">
-              <p className="text-gray-700 leading-relaxed">
-                Dr. Reema Bhatt is passionately dedicated to the unborn fetus, aiming to provide the optimal 
-                and best outcome for every pregnancy and fetus. With special expertise in invasive fetal 
-                invasive procedures, she brings unparalleled experience to fetal medicine.
-              </p>
-              <p className="text-gray-700 leading-relaxed">
-                Having served in the Armed Forces for 23 years, Dr. Bhatt combines military precision with 
-                medical excellence. Her approach focuses on "treating the baby even before the baby is born" 
-                through advanced diagnostic techniques and compassionate care.
-              </p>
-            </div>
-            
-            <div className="bg-green-50 p-6 rounded-xl">
-              <h3 className="text-lg font-semibold text-green-800 mb-3">Our Philosophy</h3>
-              <p className="text-green-700 italic">
-                "Our sole purpose is to provide the utmost compassionate and accurate services to our patients, 
-                thus rendering a beautiful and memorable experience in their journey of pregnancy."
-              </p>
-            </div>
+        {/* About Text */}
+        <div className="space-y-4  text-gray-900 leading-relaxed mb-8 text-xl">
+          <p>
+            Dr. Reema Bhatt is deeply committed to the well-being of the unborn fetus, striving to ensure
+            the best outcomes in every pregnancy. Her approach blends clinical excellence with empathy, 
+            focusing on "treating the baby even before the baby is born."With over two decades of service in the Armed Forces, she brings unparalleled precision, discipline, 
+            and a patient-first attitude into her practice of fetal medicine.
+          </p>
+        </div>
 
-            <div className="bg-green-50 p-6 rounded-xl">
-              <h3 className="text-lg font-semibold text-green-800 mb-3 flex items-center">
-                <Languages className="h-5 w-5 mr-2" />
-                Languages Known
-              </h3>
-              <div className="flex flex-wrap gap-2">
-                {['English', 'Hindi', 'Marathi'].map((language) => (
-                  <Badge key={language} variant="secondary" className="bg-green-100 text-green-800">
-                    {language}
-                  </Badge>
-                ))}
+        {/* Achievements */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-y-4 gap-x-12 mb-8">
+          {achievements.map((item, index) => (
+            <div key={index} className="flex items-start space-x-3">
+              <item.icon className="h-5 w-5 text-primary mt-1" />
+              <div>
+                <h4 className="font-bold text-lg text-gray-900">{item.label}</h4>
+                <p className=" text-gray-700">{item.value}</p>
               </div>
             </div>
-          </div>
+          ))}
+        </div>
 
-          <div className="space-y-6">
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-              {achievements.map((achievement, index) => (
-                <Card key={index} className="border-green-100 hover:shadow-lg transition-shadow duration-300">
-                  <CardContent className="p-6 text-center">
-                    <achievement.icon className="h-12 w-12 text-primary mx-auto mb-4" />
-                    <h3 className="text-lg font-semibold text-gray-900 mb-2">
-                      {achievement.title}
-                    </h3>
-                    <p className="text-sm text-gray-600">
-                      {achievement.description}
-                    </p>
-                  </CardContent>
-                </Card>
-              ))}
-            </div>
+        {/* Awards */}
+        <div className="mb-6">
+          <h3 className=" font-bold text-lg text-green-800 mb-2 flex items-center">
+            <Award className="h-4 w-4 mr-2" />
+            Awards & Recognitions
+          </h3>
+          <ul className="list-disc list-inside space-y-1  text-gray-700 pl-1">
+            {awards.map((award, index) => (
+              <li key={index}>{award}</li>
+            ))}
+          </ul>
+        </div>
 
-            <Card className="border-green-200 bg-green-50">
-              <CardContent className="p-6">
-                <h3 className="text-lg font-semibold text-green-800 mb-4 flex items-center">
-                  <Award className="h-5 w-5 mr-2" />
-                  Awards & Recognition
-                </h3>
-                <ul className="space-y-2">
-                  {awards.map((award, index) => (
-                    <li key={index} className="text-sm text-green-700 flex items-start">
-                      <div className="w-2 h-2 bg-green-600 rounded-full mt-2 mr-3 flex-shrink-0"></div>
-                      {award}
-                    </li>
-                  ))}
-                </ul>
-              </CardContent>
-            </Card>
-          </div>
+        {/* Languages */}
+        <div>
+          <h4 className=" font-bold text-lg text-green-800 mb-1 flex items-center">
+            <Languages className="h-4 w-4 mr-2" />
+            Languages Known
+          </h4>
+          <p className=" text-gray-700">English, Hindi, Marathi</p>
         </div>
       </div>
     </section>
