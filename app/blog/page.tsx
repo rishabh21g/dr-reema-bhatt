@@ -15,6 +15,7 @@ import {
   Baby,
   Brain,
 } from "lucide-react";
+import Image from "next/image";
 
 export default function BlogPage() {
   const blogPosts = [
@@ -276,7 +277,7 @@ Remember, genetic counseling is about empowerment through knowledge. It helps yo
 
   if (selectedPost) {
     return (
-      <div className="min-h-screen bg-gray-50">
+      <div className="min-h-screen ">
         {/* Header */}
         <header className="bg-white border-b border-gray-200 sticky top-0 z-50">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
@@ -302,7 +303,7 @@ Remember, genetic counseling is about empowerment through knowledge. It helps yo
         {/* Article Content */}
         <article className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
           <div className="bg-white rounded-lg shadow-sm overflow-hidden">
-            <img
+            <Image
               src={selectedPost.image}
               alt={selectedPost.title}
               className="w-full h-64 md:h-96 object-cover"
