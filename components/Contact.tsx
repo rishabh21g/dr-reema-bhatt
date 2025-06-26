@@ -133,7 +133,7 @@ export default function Contact() {
         </Card>
 
         {/* Why Choose Us Section */}
-        <Card className="border-green-100 bg-gradient-to-r from-green-50 to-emerald-50">
+        <Card >
           <CardContent className="p-8">
             <div className="text-center mb-8">
               <h3 className="text-2xl font-bold text-gray-900 mb-4">Why Choose Dr. Reema Bhatt?</h3>
