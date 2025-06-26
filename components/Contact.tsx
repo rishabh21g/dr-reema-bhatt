@@ -31,7 +31,7 @@ export default function Contact() {
       icon: MapPin,
       title: "Location",
       details: ["Amrita Hospital", "Faridabad, Haryana", "India"],
-      color: "text-blue-600",
+      color: "text-green-600",
     },
     {
       icon: Phone,
@@ -47,7 +47,7 @@ export default function Contact() {
       icon: Mail,
       title: "Email",
       details: ["reemabhatt@fbd.amrita.edu"],
-      color: "text-purple-600",
+      color: "text-green-600",
     },
     {
       icon: Clock,
@@ -57,12 +57,12 @@ export default function Contact() {
         "Fetal Medicine Specialist",
         "Senior Consultant & Head",
       ],
-      color: "text-orange-600",
+      color: "text-green-600",
     },
   ];
 
   return (
-    <section id="contact" className="py-20 bg-gray-50">
+    <section id="contact" className="py-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-16">

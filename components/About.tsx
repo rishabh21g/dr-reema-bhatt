@@ -71,14 +71,14 @@ export default function About() {
               </p>
             </div>
 
-            <div className="bg-blue-50 p-6 rounded-xl">
-              <h3 className="text-lg font-semibold text-blue-800 mb-3 flex items-center">
+            <div className="bg-green-50 p-6 rounded-xl">
+              <h3 className="text-lg font-semibold text-green-800 mb-3 flex items-center">
                 <Languages className="h-5 w-5 mr-2" />
                 Languages Known
               </h3>
               <div className="flex flex-wrap gap-2">
                 {['English', 'Hindi', 'Marathi'].map((language) => (
-                  <Badge key={language} variant="secondary" className="bg-blue-100 text-blue-800">
+                  <Badge key={language} variant="secondary" className="bg-green-100 text-green-800">
                     {language}
                   </Badge>
                 ))}
@@ -103,16 +103,16 @@ export default function About() {
               ))}
             </div>
 
-            <Card className="border-yellow-200 bg-yellow-50">
+            <Card className="border-green-200 bg-green-50">
               <CardContent className="p-6">
-                <h3 className="text-lg font-semibold text-yellow-800 mb-4 flex items-center">
+                <h3 className="text-lg font-semibold text-green-800 mb-4 flex items-center">
                   <Award className="h-5 w-5 mr-2" />
                   Awards & Recognition
                 </h3>
                 <ul className="space-y-2">
                   {awards.map((award, index) => (
-                    <li key={index} className="text-sm text-yellow-700 flex items-start">
-                      <div className="w-2 h-2 bg-yellow-600 rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                    <li key={index} className="text-sm text-green-700 flex items-start">
+                      <div className="w-2 h-2 bg-green-600 rounded-full mt-2 mr-3 flex-shrink-0"></div>
                       {award}
                     </li>
                   ))}
