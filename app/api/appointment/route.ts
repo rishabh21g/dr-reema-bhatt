@@ -1,15 +1,15 @@
-import { NextApiRequest } from "next";
 import { NextResponse } from "next/server";
 import { Resend } from "resend";
 
-const resend = new Resend(process.env.NEXT_PUBLIC_RESEND_API_KEY);
+const resend = new Resend(process.env.RESEND_API_KEY);
 
-const sendEmail = async (req: NextApiRequest) => {
-  const { name, email, phone, date, time } = await req.body;
+export async function POST(req: Request) {
+  const body = await req.json();
+  const { name, email, phone, date, time } = body;
   try {
     await resend.emails.send({
       from: "Your clinic <onboarding@resend.dev>",
-      to: ["rg2845628@gmail.com"],  // reemabhatt@fbd.amrita.edu
+      to: [process.env.DOCTOR_EMAIL!], 
       subject: "New Appointment Request",
       html: `
   <div style="font-family: Arial, sans-serif; padding: 20px; background-color: #f9f9f9; color: #333;">
@@ -48,6 +48,12 @@ const sendEmail = async (req: NextApiRequest) => {
   </div>
 `,
     });
+    if (!name || !email || !date || !time || !phone) {
+      return NextResponse.json(
+        { message: "All inputs are mandatory!" },
+        { status: 400 }
+      );
+    }
 
     return NextResponse.json(
       { message: "Appointement done Successfully" },
@@ -59,4 +65,4 @@ const sendEmail = async (req: NextApiRequest) => {
       { status: 500 }
     );
   }
-};
+}
