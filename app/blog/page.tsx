@@ -443,7 +443,7 @@ Remember, genetic counseling is about empowerment through knowledge. It helps yo
                 className="border-green-100 hover:shadow-xl transition-all duration-300 group cursor-pointer"
               >
                 <div className="relative overflow-hidden">
-                  <img
+                  <Image
                     src={post.image}
                     alt={post.title}
                     className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
