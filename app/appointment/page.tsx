@@ -194,7 +194,7 @@ export default function BookAppointmentPage() {
                           if (selectedDate) {
                             setForm({
                               ...form,
-                              date: selectedDate.toISOString().split("T")[0],
+                              date: selectedDate.toLocaleDateString(),
                             });
                           }
                         }}
