@@ -4,6 +4,7 @@ import { useState } from "react";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Menu, X, Stethoscope } from "lucide-react";
+import Image from "next/image";
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -18,11 +19,11 @@ export default function Header() {
   ];
 
   return (
-    <header className="fixed top-0 left-0 right-0 bg-white/95 backdrop-blur-2xl border-b border-green-100 z-50 shadow-md">
+    <header className="fixed top-0 left-0 right-0 bg-green/95 backdrop-blur-3xl border-b border-green-100 z-50 shadow-md">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           <div className="flex items-center space-x-2">
-            <Stethoscope className="h-8 w-8 text-primary" />
+            <Image src={"https://admin.amritahospitals.org/sites/default/files/FARIDABAD%20%281%29_0.svg"} alt="Hospital logo" width={32} height={12} className="w-20 h-8"/>
             <span className="text-xl font-bold text-green-800">
               Dr. Reema Bhatt
             </span>
