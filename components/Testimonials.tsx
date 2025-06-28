@@ -89,7 +89,7 @@ export default function Testimonials() {
         {/* Carousel Section */}
         <Carousel
           opts={{ align: "start", loop: true  }}
-          className="w-full max-w-full" 
+          className="w-full max-w-full px-10" 
         >
           <CarouselContent>
             {testimonials.map((testimonial, index) => (
@@ -134,7 +134,7 @@ export default function Testimonials() {
                 </Card>
               </CarouselItem>
             ))}
-          </CarouselContent>
+          </CarouselContent >
           <CarouselPrevious />
           <CarouselNext />
         </Carousel>
