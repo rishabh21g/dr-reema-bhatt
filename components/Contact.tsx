@@ -13,15 +13,9 @@ import {
   Heart,
   Award,
 } from "lucide-react";
+import Link from "next/link";
 
 export default function Contact() {
-  const handleBookAppointment = () => {
-    window.open(
-      "https://www.amritahospitals.org/faridabad/doctor/reema-bhatt",
-      "_blank"
-    );
-  };
-
   const handleWhatsApp = () => {
     window.open("https://wa.me/919953011711", "_blank");
   };
@@ -62,16 +56,19 @@ export default function Contact() {
   ];
 
   return (
-    <section id="contact" >
+    <section id="contact">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-16">
-          <Badge className="mb-4 bg-green-100 text-green-800">Get in Touch</Badge>
+          <Badge className="mb-4 bg-green-100 text-green-800">
+            Get in Touch
+          </Badge>
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
             Schedule Your <span className="text-primary">Consultation</span>
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Ready to experience world-class fetal medicine care? Contact Dr. Reema Bhatt at Amrita Hospital, Faridabad for your consultation.
+            Ready to experience world-class fetal medicine care? Contact Dr.
+            Reema Bhatt at Amrita Hospital, Faridabad for your consultation.
           </p>
         </div>
 
@@ -88,9 +85,13 @@ export default function Contact() {
                     <info.icon className="size-6" />
                   </div>
                   <div>
-                    <h3 className="font-semibold text-gray-900 mb-2">{info.title}</h3>
+                    <h3 className="font-semibold text-gray-900 mb-2">
+                      {info.title}
+                    </h3>
                     {info.details.map((detail, i) => (
-                      <p key={i} className="text-gray-600 text-sm">{detail}</p>
+                      <p key={i} className="text-gray-600 text-sm">
+                        {detail}
+                      </p>
                     ))}
                   </div>
                 </div>
@@ -110,15 +111,15 @@ export default function Contact() {
                 </h3>
               </div>
               <div className="text-gray-700 text-sm md:text-base">
-                Schedule your consultation directly through Amrita Hospital's official booking system.
+                Schedule your consultation directly through Amrita Hospital's
+                official booking system.
               </div>
               <div className="flex flex-col md:flex-row gap-3 md:gap-4">
-                <Button
-                  className="bg-primary hover:bg-primary/90 w-full md:w-auto"
-                  onClick={handleBookAppointment}
-                >
-                  Book Online
-                </Button>
+                <Link href="appointment">
+                  <Button className="bg-primary hover:bg-primary/90 w-full md:w-auto">
+                    Book Online
+                  </Button>
+                </Link>
                 <Button
                   variant="outline"
                   className="border-green-500 text-green-600 hover:bg-green-50 w-full md:w-auto"
@@ -133,12 +134,16 @@ export default function Contact() {
         </Card>
 
         {/* Why Choose Us Section */}
-        <Card >
+        <Card>
           <CardContent className="p-8">
             <div className="text-center mb-8">
-              <h3 className="text-2xl font-bold text-gray-900 mb-4">Why Choose Dr. Reema Bhatt?</h3>
+              <h3 className="text-2xl font-bold text-gray-900 mb-4">
+                Why Choose Dr. Reema Bhatt?
+              </h3>
               <p className="text-lg text-gray-700 max-w-3xl mx-auto mb-6">
-                Our aim is to "treat the baby even before the baby is born". We are specialized in diagnosing fatal birth defects and complications in the unborn baby.
+                Our aim is to "treat the baby even before the baby is born". We
+                are specialized in diagnosing fatal birth defects and
+                complications in the unborn baby.
               </p>
             </div>
 
@@ -164,7 +169,9 @@ export default function Contact() {
                   <div className="bg-white p-4 rounded-full w-16 h-16 mx-auto mb-4 flex items-center justify-center shadow">
                     {item.icon}
                   </div>
-                  <h4 className="font-semibold text-gray-900 mb-2">{item.title}</h4>
+                  <h4 className="font-semibold text-gray-900 mb-2">
+                    {item.title}
+                  </h4>
                   <p className="text-sm text-gray-600">{item.desc}</p>
                 </div>
               ))}

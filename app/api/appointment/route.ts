@@ -5,63 +5,73 @@ const resend = new Resend(process.env.RESEND_API_KEY);
 
 export async function POST(req: Request) {
   const body = await req.json();
-  const { name, email, phone, date, time } = body;
+  const { name, email, phone, date } = body;
   try {
-    await resend.emails.send({
-      from: "Your clinic <onboarding@resend.dev>",
-      to: [process.env.DOCTOR_EMAIL!], 
+    const { data, error } = await resend.emails.send({
+      from: "Your online clinic Portal <onboarding@resend.dev>",
+      to: [process.env.DOCTOR_EMAIL!],
       subject: "New Appointment Request",
       html: `
-  <div style="font-family: Arial, sans-serif; padding: 20px; background-color: #f9f9f9; color: #333;">
-    <h2 style="color: #0066cc;">New Appointment Request for Dr. Reema Bhatt</h2>
+ <div style="font-family: Arial, sans-serif; padding: 16px; background-color: #e6f4ea; color: #0b3d2e; line-height: 1.5; max-width: 600px; margin: auto;">
+  <h2 style="margin: 0 0 12px; color: #14532d;">New Appointment: <span style="color: #0b3d2e;">Dr. Reema Bhatt</span></h2>
 
-    <p style="margin: 10px 0;">You have received a new appointment request. The details are as follows:</p>
+  <div style="background-color: #ffffff; border-left: 4px solid #14532d; padding: 12px 16px; border-radius: 6px;">
+    <div style="margin-bottom: 8px;">
+      <strong style="color: #065f46;">👤 Patient:</strong>
+      <span style="font-weight: bold; color: #0b3d2e;">${name}</span>
+    </div>
 
-    <table style="width: 100%; border-collapse: collapse; background-color: #fff; border: 1px solid #ddd;">
-      <tr>
-        <td style="padding: 10px; border-bottom: 1px solid #eee;"><strong>Patient Name:</strong></td>
-        <td style="padding: 10px; border-bottom: 1px solid #eee;">${name}</td>
-      </tr>
-      <tr>
-        <td style="padding: 10px; border-bottom: 1px solid #eee;"><strong>Email:</strong></td>
-        <td style="padding: 10px; border-bottom: 1px solid #eee;">${email}</td>
-      </tr>
-      <tr>
-        <td style="padding: 10px; border-bottom: 1px solid #eee;"><strong>Phone:</strong></td>
-        <td style="padding: 10px; border-bottom: 1px solid #eee;">${phone}</td>
-      </tr>
-      <tr>
-        <td style="padding: 10px; border-bottom: 1px solid #eee;"><strong>Date:</strong></td>
-        <td style="padding: 10px; border-bottom: 1px solid #eee;">${date}</td>
-      </tr>
-      <tr>
-        <td style="padding: 10px;"><strong>Time:</strong></td>
-        <td style="padding: 10px;">${time}</td>
-      </tr>
-    </table>
+    <div style="margin-bottom: 8px;">
+      <strong style="color: #065f46;">📧 Email:</strong>
+      <span style="font-weight: bold; color: #0b3d2e;">${email}</span>
+    </div>
 
-    <p style="margin-top: 20px;">Please follow up with the patient as soon as possible.</p>
+    <div style="margin-bottom: 8px;">
+      <strong style="color: #065f46;">📞 Phone:</strong>
+      <span style="font-weight: bold; color: #0b3d2e;">${phone}</span>
+    </div>
 
-    <p style="margin-top: 30px; font-size: 0.9em; color: #888;">
-      This email was sent by your online appointment booking system.
-    </p>
+    <div>
+      <strong style="color: #065f46;">📅 Date:</strong>
+      <span style="font-weight: bold; color: #0b3d2e;">${date}</span>
+    </div>
   </div>
+
+  <p style="margin-top: 16px; font-size: 0.85em; color: #475569;">
+    Please respond to this request as soon as possible.
+  </p>
+
+  <p style="margin-top: 10px; font-size: 0.75em; color: #64748b;">
+    — Online Appointment System
+  </p>
+</div>
+
+
 `,
     });
-    if (!name || !email || !date || !time || !phone) {
+    if (!name || !email || !date || !phone) {
       return NextResponse.json(
         { message: "All inputs are mandatory!" },
         { status: 400 }
       );
     }
+    console.log(data);
+    if (error) {
+      return NextResponse.json(
+        {
+          message: "Server error please try again later!",
+        },
+        { status: 500 }
+      );
+    }
 
     return NextResponse.json(
-      { message: "Appointement done Successfully" },
+      { message: "Doctor will contact you shortly" },
       { status: 200 }
     );
   } catch (err) {
     return NextResponse.json(
-      { message: " Error while doing appointment | Server Error" },
+      { message: " Error while doing appointment | Server Error" + err },
       { status: 500 }
     );
   }

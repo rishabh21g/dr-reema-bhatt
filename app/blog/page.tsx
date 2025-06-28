@@ -5,6 +5,10 @@ import Link from "next/link";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
+import medico1 from "@/images/medico1.jpeg";
+import medico2 from "@/images/medico2.jpeg";
+import medico3 from "@/images/medico3.jpg";
+import hero1 from "@/images/hero1.jpeg"
 import {
   ArrowLeft,
   Calendar,
@@ -76,8 +80,7 @@ Remember, every pregnancy is unique, and personalized care is essential for the 
       readTime: "8 min read",
       category: "Fetal Medicine",
       icon: Baby,
-      image:
-        "https://images.pexels.com/photos/4386466/pexels-photo-4386466.jpeg?auto=compress&cs=tinysrgb&w=800",
+      image: medico1,
     },
     {
       id: 2,
@@ -153,8 +156,7 @@ Remember, being classified as high-risk doesn't mean something will go wrong. It
       readTime: "10 min read",
       category: "High-Risk Pregnancy",
       icon: Shield,
-      image:
-        "https://images.pexels.com/photos/4386471/pexels-photo-4386471.jpeg?auto=compress&cs=tinysrgb&w=800",
+      image: medico2,
     },
     {
       id: 3,
@@ -266,8 +268,7 @@ Remember, genetic counseling is about empowerment through knowledge. It helps yo
       readTime: "12 min read",
       category: "Genetic Counseling",
       icon: Brain,
-      image:
-        "https://images.pexels.com/photos/6823321/pexels-photo-6823321.jpeg?auto=compress&cs=tinysrgb&w=800",
+      image: medico3,
     },
   ];
 
@@ -306,6 +307,7 @@ Remember, genetic counseling is about empowerment through knowledge. It helps yo
             <Image
               src={selectedPost.image}
               alt={selectedPost.title}
+              priority={false}
               className="w-full h-64 md:h-96 object-cover"
             />
             <div className="p-8 md:p-12">
@@ -328,8 +330,8 @@ Remember, genetic counseling is about empowerment through knowledge. It helps yo
               </h1>
 
               <div className="flex items-center mb-8 pb-8 border-b border-gray-200">
-                <img
-                  src="https://images.pexels.com/photos/5215024/pexels-photo-5215024.jpeg?auto=compress&cs=tinysrgb&w=100"
+                <Image
+                  src={hero1}
                   alt="Dr. Reema Bhatt"
                   className="w-12 h-12 rounded-full object-cover mr-4"
                 />
@@ -446,6 +448,7 @@ Remember, genetic counseling is about empowerment through knowledge. It helps yo
                   <Image
                     src={post.image}
                     alt={post.title}
+                    priority={false}
                     className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
                   />
                   <div className="absolute top-4 left-4">

@@ -8,6 +8,7 @@ import Image from "next/image";
 import img1 from "../images/hero1.jpeg";
 import img2 from "../images/hero2.jpeg";
 import img3 from "../images/hero3.jpeg";
+import Link from "next/link";
 export default function Hero() {
   const [currentSlide, setCurrentSlide] = useState(0);
 
@@ -20,18 +21,8 @@ export default function Hero() {
     return () => clearInterval(timer);
   }, [images.length]);
 
-  const handleBookAppointment = () => {
-    window.open(
-      "https://www.amritahospitals.org/faridabad/doctor/reema-bhatt",
-      "_blank"
-    );
-  };
-
   return (
-    <section
-      id="home"
-      className="pt-20 pb-16 "
-    >
+    <section id="home" className="pt-20 pb-16 ">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* Left Text Content */}
@@ -54,14 +45,15 @@ export default function Hero() {
               for every pregnancy and fetus.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 mb-12">
-              <Button
-                size="lg"
-                className="bg-primary hover:bg-primary/90 text-white group"
-                onClick={handleBookAppointment}
-              >
-                Schedule Consultation
-                <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
-              </Button>
+              <Link href="/appointment">
+                <Button
+                  size="lg"
+                  className="bg-primary hover:bg-primary/90 text-white group"
+                >
+                  Schedule Consultation
+                  <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
+                </Button>
+              </Link>
             </div>
 
             <div className="grid grid-cols-3 gap-8 text-center">
