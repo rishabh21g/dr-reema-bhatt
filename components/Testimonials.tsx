@@ -89,7 +89,7 @@ export default function Testimonials() {
         {/* Carousel Section */}
         <Carousel
           opts={{ align: "start", loop: true  }}
-          className="w-full max-w-full px-10" 
+          className="w-full max-w-full" 
         >
           <CarouselContent>
             {testimonials.map((testimonial, index) => (
