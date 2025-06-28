@@ -70,9 +70,7 @@ export default function BookAppointmentPage() {
     }
   };
 
-  useEffect(() => {
-    console.log(form);
-  }, [form]);
+
 
   return (
     <div
