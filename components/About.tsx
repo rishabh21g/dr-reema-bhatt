@@ -2,7 +2,8 @@
 
 import { Badge } from "@/components/ui/badge";
 import { GraduationCap, Heart, Shield, Award, Languages } from "lucide-react";
-
+import Image from "next/image";
+import fetal from "../images/Fetal-Medicine.webp";
 export default function About() {
   const achievements = [
     {
@@ -58,21 +59,34 @@ export default function About() {
         </div>
 
         {/* About Text */}
-        <div className="space-y-4  text-gray-900 leading-relaxed mb-8 text-xl">
-          <p className="font-semibold italic">
-            Pregnancy is a beautiful and life-changing journey, and at Fetal
-            Medicine Solutions, we offer comprehensive care for your unborn
-            child. Dr. Reema Bhatt, our experienced fetal medicine specialist,
-            provides expert support at every stage from pre-pregnancy
-            counseling, especially if you have previous pregnancy complications
-            or chronic conditions, to monitoring fetal growth and development
-            during pregnancy, and continued care after birth. Dr. Reema Bhatt is
-            skilled in advanced ultrasounds, detecting fetal abnormalities, and
-            offering personalized guidance for families at risk of hereditary
-            conditions. Friendly and approachable, she ensures all your
-            questions are answered, working closely with your obstetrician to
-            provide the best possible care for you and your baby.
-          </p>
+        <div className="flex items-center justify-center mb-8 space-x-8 text-gray-900 leading-relaxed text-xl">
+          {/* Left: Text */}
+          <div className="w-3/4">
+            <p className="font-semibold italic">
+              Pregnancy is a beautiful and life-changing journey, and at Fetal
+              Medicine Solutions, we offer comprehensive care for your unborn
+              child. Dr. Reema Bhatt, our experienced fetal medicine specialist,
+              provides expert support at every stage from pre-pregnancy
+              counseling, especially if you have previous pregnancy
+              complications or chronic conditions, to monitoring fetal growth
+              and development during pregnancy, and continued care after birth.
+              Dr. Reema Bhatt is skilled in advanced ultrasounds, detecting
+              fetal abnormalities, and offering personalized guidance for
+              families at risk of hereditary conditions. Friendly and
+              approachable, she ensures all your questions are answered, working
+              closely with your obstetrician to provide the best possible care
+              for you and your baby.
+            </p>
+          </div>
+          {/* Right: Image */}
+          <div className="w-1/4 relative aspect-[4/5] h-full">
+            <Image
+              src={fetal}
+              alt={"fetal medicine"}
+              fill
+              className="object-contain rounded-lg w-full h-full"
+            />
+          </div>
         </div>
 
         {/* Achievements */}
