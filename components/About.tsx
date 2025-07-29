@@ -1,42 +1,42 @@
-'use client';
+"use client";
 
-import { Badge } from '@/components/ui/badge';
-import { GraduationCap, Heart, Shield, Award, Languages } from 'lucide-react';
+import { Badge } from "@/components/ui/badge";
+import { GraduationCap, Heart, Shield, Award, Languages } from "lucide-react";
 
 export default function About() {
   const achievements = [
     {
       icon: GraduationCap,
-      label: 'Education',
+      label: "Education",
       value:
-        'MBBS, MS, DNB, FICOG, MNAMS, Fetal Medicine (AIIMS Delhi), FMF-UK Accredited',
+        "MBBS, MS, DNB, FICOG, MNAMS, Fetal Medicine (AIIMS Delhi), FMF-UK Accredited",
     },
     {
       icon: Heart,
-      label: 'Specialization',
+      label: "Specialization",
       value:
-        'Fetal Medicine & Perinatology, Invasive Fetal Therapy, Genetic Counselling',
+        "Fetal Medicine & Perinatology, Invasive Fetal Therapy, Genetic Counselling",
     },
     {
       icon: Shield,
-      label: 'Experience',
+      label: "Experience",
       value:
-        '23 Years in Armed Forces | Senior Consultant & Head at Amrita Hospital, Faridabad',
+        "23 Years in Armed Forces | Senior Consultant & Head at Amrita Hospital, Faridabad",
     },
     {
       icon: Award,
-      label: 'Recognition',
+      label: "Recognition",
       value:
-        'Presidential Certificate of Appreciation, Chief of Army Staff Commendation, Multiple Medals',
+        "Presidential Certificate of Appreciation, Chief of Army Staff Commendation, Multiple Medals",
     },
   ];
 
   const awards = [
-    'Certificate of Appreciation by President of India (2022)',
-    'Chief of Army Staff Commendation (2016)',
-    'Army Commanders Commendation Card (2012)',
+    "Certificate of Appreciation by President of India (2022)",
+    "Chief of Army Staff Commendation (2016)",
+    "Army Commanders Commendation Card (2012)",
     "Mr. S. Bhattacharya & Dr. Ganguli's Gold Medal (2020)",
-    'Dr. Neera Aggarwal Medal Best Paper, Silver Medal (2013)',
+    "Dr. Neera Aggarwal Medal Best Paper, Silver Medal (2013)",
   ];
 
   return (
@@ -44,23 +44,34 @@ export default function About() {
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Heading */}
         <div className="text-center mb-10">
-          <Badge className="mb-2 bg-green-100 text-green-800 ">About Dr. Reema Bhatt</Badge>
+          <Badge className="mb-2 bg-green-100 text-green-800 ">
+            About Dr. Reema Bhatt
+          </Badge>
           <h2 className="text-2xl md:text-4xl font-bold text-gray-900">
             Dedicated to <span className="text-primary">Fetal Medicine</span>
           </h2>
           <p className="  mt-3 max-w-4xl mx-auto text-2xl font-bold text-gray-800">
-            Senior Consultant & Head of Fetal Medicine at Amrita Hospital, Faridabad with 23 years of
-            Armed Forces service and expertise in invasive fetal procedures.
+            Senior Consultant & Head of Fetal Medicine at Amrita Hospital,
+            Faridabad with 23 years of Armed Forces service and expertise in
+            invasive fetal procedures.
           </p>
         </div>
 
         {/* About Text */}
         <div className="space-y-4  text-gray-900 leading-relaxed mb-8 text-xl">
-          <p>
-            Dr. Reema Bhatt is deeply committed to the well-being of the unborn fetus, striving to ensure
-            the best outcomes in every pregnancy. Her approach blends clinical excellence with empathy, 
-            focusing on "treating the baby even before the baby is born."With over two decades of service in the Armed Forces, she brings unparalleled precision, discipline, 
-            and a patient-first attitude into her practice of fetal medicine.
+          <p className="font-semibold italic">
+            Pregnancy is a beautiful and life-changing journey, and at Fetal
+            Medicine Solutions, we offer comprehensive care for your unborn
+            child. Dr. Reema Bhatt, our experienced fetal medicine specialist,
+            provides expert support at every stage from pre-pregnancy
+            counseling, especially if you have previous pregnancy complications
+            or chronic conditions, to monitoring fetal growth and development
+            during pregnancy, and continued care after birth. Dr. Reema Bhatt is
+            skilled in advanced ultrasounds, detecting fetal abnormalities, and
+            offering personalized guidance for families at risk of hereditary
+            conditions. Friendly and approachable, she ensures all your
+            questions are answered, working closely with your obstetrician to
+            provide the best possible care for you and your baby.
           </p>
         </div>
 
@@ -70,7 +81,9 @@ export default function About() {
             <div key={index} className="flex items-start space-x-3">
               <item.icon className="h-5 w-5 text-primary mt-1" />
               <div>
-                <h4 className="font-bold text-lg text-gray-900">{item.label}</h4>
+                <h4 className="font-bold text-lg text-gray-900">
+                  {item.label}
+                </h4>
                 <p className=" text-gray-700">{item.value}</p>
               </div>
             </div>

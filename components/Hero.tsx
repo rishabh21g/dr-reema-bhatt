@@ -81,19 +81,15 @@ export default function Hero() {
               {" "}
               {/* container must be relative for fill */}
               {images.map((image, index) => (
-                <Link
-                  href={"https://www.fetalmedicinesolutions.com/"}
+                <Image
+                  src={image}
                   key={index}
-                >
-                  <Image
-                    src={image}
-                    alt={`Slide ${index + 1}`}
-                    fill
-                    className={`object-contain transition-opacity duration-1000 ${
-                      index === currentSlide ? "opacity-100" : "opacity-0"
-                    }`}
-                  />
-                </Link>
+                  alt={`Slide ${index + 1}`}
+                  fill
+                  className={`object-contain transition-opacity duration-1000 ${
+                    index === currentSlide ? "opacity-100" : "opacity-0"
+                  }`}
+                />
               ))}
             </div>
           </div>
