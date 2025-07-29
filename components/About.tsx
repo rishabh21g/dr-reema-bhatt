@@ -59,7 +59,7 @@ export default function About() {
         </div>
 
         {/* About Text */}
-        <div className="flex flex-col md:flex-row items-center justify-center mb-4 text-sm gap-x-9 text-gray-900 leading-relaxed text-lg md:text-xl px-4">
+        <div className="flex flex-col md:flex-row items-center justify-center mb-4 text-sm gap-x-9 text-gray-900 leading-relaxed  md:text-xl px-4">
           {/* Left: Text */}
           <div className="w-full md:w-3/4">
             <p className="font-semibold italic text-justify">
