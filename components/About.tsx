@@ -59,10 +59,10 @@ export default function About() {
         </div>
 
         {/* About Text */}
-        <div className="flex items-center justify-center mb-8 space-x-8 text-gray-900 leading-relaxed text-xl">
+        <div className="flex flex-col md:flex-row items-center justify-center mb-4 text-sm gap-x-9 text-gray-900 leading-relaxed text-lg md:text-xl px-4">
           {/* Left: Text */}
-          <div className="w-3/4">
-            <p className="font-semibold italic">
+          <div className="w-full md:w-3/4">
+            <p className="font-semibold italic text-justify">
               Pregnancy is a beautiful and life-changing journey, and at Fetal
               Medicine Solutions, we offer comprehensive care for your unborn
               child. Dr. Reema Bhatt, our experienced fetal medicine specialist,
@@ -78,13 +78,14 @@ export default function About() {
               for you and your baby.
             </p>
           </div>
+
           {/* Right: Image */}
-          <div className="w-1/4 relative aspect-[4/5] h-full">
+          <div className="w-full md:w-1/4 relative aspect-[4/5]">
             <Image
               src={fetal}
-              alt={"fetal medicine"}
+              alt="fetal medicine"
               fill
-              className="object-contain rounded-lg w-full h-full"
+              className="object-contain rounded-lg"
             />
           </div>
         </div>
