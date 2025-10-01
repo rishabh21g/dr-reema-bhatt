@@ -1,26 +1,11 @@
 "use client";
-
-import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { ArrowRight, Award, Users, Calendar } from "lucide-react";
 import Image from "next/image";
 import img1 from "../images/hero1.jpeg";
-import img2 from "../images/hero2.jpeg";
-import img3 from "../images/hero3.jpeg";
 import Link from "next/link";
 export default function Hero() {
-  const [currentSlide, setCurrentSlide] = useState(0);
-
-  const images = [img1, img2, img3];
-
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setCurrentSlide((prev) => (prev + 1) % images.length);
-    }, 5000);
-    return () => clearInterval(timer);
-  }, [images.length]);
-
   return (
     <section id="home" className="pt-20 pb-16 ">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -79,18 +64,13 @@ export default function Hero() {
           <div className="relative fade-in">
             <div className="relative w-full h-[500px]">
               {" "}
-              {/* container must be relative for fill */}
-              {images.map((image, index) => (
-                <Image
-                  src={image}
-                  key={index}
-                  alt={`Slide ${index + 1}`}
-                  fill
-                  className={`object-contain transition-opacity duration-1000 ${
-                    index === currentSlide ? "opacity-100" : "opacity-0"
-                  }`}
-                />
-              ))}
+              <Image
+                src={img1}
+                alt={`Dr Reema Bhatt`}
+                fill
+                className={`object-contain transition-opacity duration-1000 
+                  `}
+              />
             </div>
           </div>
         </div>
