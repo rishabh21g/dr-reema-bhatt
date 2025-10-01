@@ -17,7 +17,7 @@ import Link from "next/link";
 
 export default function Contact() {
   const handleWhatsApp = () => {
-    window.open("https://wa.me/919953011711", "_blank");
+    window.open("https://wa.me/+919953011711", "_blank");
   };
 
   const contactInfo = [
@@ -32,7 +32,7 @@ export default function Contact() {
       title: "Phone Numbers",
       details: [
         "+91 9953011711",
-        "+91 8595903808",
+        "0129-3521234",
         "(WhatsApp preferred if phone not answered)",
       ],
       color: "text-green-600",
@@ -111,8 +111,8 @@ export default function Contact() {
                 </h3>
               </div>
               <div className="text-gray-700 text-sm md:text-base">
-                Schedule your consultation directly through Amrita Hospital's
-                official booking system.
+                Schedule your consultation directly through Amrita
+                Hospital&apos;s official booking system.
               </div>
               <div className="flex flex-col md:flex-row gap-3 md:gap-4">
                 <Link href="appointment">
@@ -141,9 +141,9 @@ export default function Contact() {
                 Why Choose Dr. Reema Bhatt?
               </h3>
               <p className="text-lg text-gray-700 max-w-3xl mx-auto mb-6">
-                Our aim is to "treat the baby even before the baby is born". We
-                are specialized in diagnosing fatal birth defects and
-                complications in the unborn baby.
+                Our aim is to &quot;treat the baby even before the baby is
+                born&quot;. We are specialized in diagnosing fetal birth defects
+                and complications in the unborn baby.
               </p>
             </div>
 

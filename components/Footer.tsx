@@ -1,4 +1,4 @@
-import Link from 'next/link';
+import Link from "next/link";
 import {
   Stethoscope,
   Facebook,
@@ -7,49 +7,49 @@ import {
   Mail,
   Phone,
   MapPin,
-} from 'lucide-react';
+} from "lucide-react";
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   const quickLinks = [
-    { name: 'Home', href: '#home' },
-    { name: 'About', href: '#about' },
-    { name: 'Services', href: '#services' },
-    { name: 'Testimonials', href: '#testimonials' },
-    { name: 'Contact', href: '#contact' },
-    { name: 'Blog', href: '/blog' },
+    { name: "Home", href: "#home" },
+    { name: "About", href: "#about" },
+    { name: "Services", href: "#services" },
+    { name: "Testimonials", href: "#testimonials" },
+    { name: "Contact", href: "#contact" },
+    { name: "Blog", href: "/blog" },
   ];
 
   const services = [
-    'Fetal Viability Scan',
-    'Fetal Echocardiogram',
-    'Genetic Counseling',
-    'High-Risk Pregnancies',
-    '3D/4D Scans',
-    'Invasive Fetal Therapy',
+    "Fetal Viability Scan",
+    "Fetal Echocardiogram",
+    "Genetic Counseling",
+    "High-Risk Pregnancies",
+    "3D/4D Scans",
+    "Invasive Fetal Therapy",
   ];
 
   const socialLinks = [
     {
       icon: Facebook,
-      href: 'https://www.facebook.com/share/16PZGKsTvG/',
-      label: 'Facebook',
+      href: "https://www.facebook.com/share/16PZGKsTvG/",
+      label: "Facebook",
     },
     {
       icon: Instagram,
-      href: 'https://www.instagram.com/reema_fetalmed?igsh=MmMycXIxcTBwYWN4',
-      label: 'Instagram',
+      href: "https://www.instagram.com/reema_fetalmed?igsh=MmMycXIxcTBwYWN4",
+      label: "Instagram",
     },
     {
       icon: Linkedin,
-      href: 'https://www.linkedin.com/in/reema-bhatt-a13600101',
-      label: 'LinkedIn',
+      href: "https://www.linkedin.com/in/reema-bhatt-a13600101",
+      label: "LinkedIn",
     },
     {
       icon: Stethoscope,
-      href: 'https://www.amritahospitals.org/faridabad/department/centres-of-excellences/mother-and-child-care/foetal-medicine',
-      label: 'Fetal Medicine Dept',
+      href: "https://www.amritahospitals.org/faridabad/department/centres-of-excellences/mother-and-child-care/foetal-medicine",
+      label: "Fetal Medicine Dept",
     },
   ];
 
@@ -64,8 +64,9 @@ export default function Footer() {
               <span className="text-xl font-bold">Dr. Reema Bhatt</span>
             </div>
             <p className="text-gray-400 mb-6 leading-relaxed">
-              Senior Consultant & Head of Fetal Medicine at Amrita Hospital, Faridabad. 
-              Specialized in invasive fetal procedures with 23 years of medical excellence.
+              Senior Consultant & Head of Fetal Medicine at Amrita Hospital,
+              Faridabad. Specialized in invasive fetal procedures with 23 years
+              of medical excellence.
             </p>
             <div className="flex space-x-4">
               {socialLinks.map((social, index) => (
@@ -129,11 +130,17 @@ export default function Footer() {
               <div className="flex items-center space-x-3">
                 <Phone className="h-5 w-5 text-primary flex-shrink-0" />
                 <div className="text-gray-400">
-                  <a href="tel:+919953011711" className="block hover:text-primary transition">
+                  <a
+                    href="tel:+919953011711"
+                    className="block hover:text-primary transition"
+                  >
                     +91 9953011711
                   </a>
-                  <a href="tel:+918595903808" className="block hover:text-primary transition">
-                    +91 8595903808
+                  <a
+                    href="tel:+911293521234"
+                    className="block hover:text-primary transition"
+                  >
+                    0129-3521234
                   </a>
                 </div>
               </div>
@@ -154,13 +161,20 @@ export default function Footer() {
         <div className="border-t border-gray-800 mt-12 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <p className="text-gray-400 text-sm">
-              © {currentYear} Dr. Reema Bhatt - Fetal Medicine Specialist. All rights reserved.
+              © {currentYear} Dr. Reema Bhatt - Fetal Medicine Specialist. All
+              rights reserved.
             </p>
             <div className="flex space-x-6 mt-4 md:mt-0">
-              <Link href="#" className="text-gray-400 hover:text-primary text-sm transition-colors">
+              <Link
+                href="#"
+                className="text-gray-400 hover:text-primary text-sm transition-colors"
+              >
                 Privacy Policy
               </Link>
-              <Link href="#" className="text-gray-400 hover:text-primary text-sm transition-colors">
+              <Link
+                href="#"
+                className="text-gray-400 hover:text-primary text-sm transition-colors"
+              >
                 Terms of Service
               </Link>
               <a

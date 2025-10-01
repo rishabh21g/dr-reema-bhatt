@@ -59,8 +59,9 @@ export default function BookAppointmentPage() {
     setLoading(true);
     try {
       const res = await axios.post("/api/appointment", form);
-      console.log(res);
+    
       toast.success("Appointment sent! Doctor will contact you shortly");
+      
       setForm({ name: "", email: "", phone: "", date: "" });
     } catch (err) {
       toast.error("Server error. Please try again later.");
@@ -194,7 +195,11 @@ export default function BookAppointmentPage() {
                           if (selectedDate) {
                             setForm({
                               ...form,
-                              date: selectedDate.toLocaleDateString(),
+                              date: selectedDate.toLocaleDateString("en-GB" ,{
+                                day:"2-digit",
+                                month:"long",
+                                year:"numeric"
+                              }),
                             });
                           }
                         }}
