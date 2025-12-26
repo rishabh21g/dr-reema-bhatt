@@ -10,7 +10,7 @@ export default function About() {
       icon: GraduationCap,
       label: "Education",
       value:
-        "MBBS, MS, DNB, FICOG, MNAMS, Fetal Medicine (AIIMS Delhi), FMF-UK Accredited",
+        "MBBS, MS, DNB, FICOG, MNAMS, Fetal Medicine (AIIMS Delhi), FMF-UK Accredited and Lifelong Learning Masters's Degree in Advanced Maternal-Fetal Medicine (2023-25)",
     },
     {
       icon: Heart,
